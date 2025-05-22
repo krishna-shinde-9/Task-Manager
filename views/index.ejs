@@ -18,10 +18,11 @@
     <div class="task-list">
       <% if (files.length > 0) { %>
         <% files.forEach(element => { %>
-          <div class="task-item">
+         <div class="task-item">
   <h3><%= element %></h3>
   <div class="task-actions">
     <a href="/files/<%= element %>">Read More</a>
+    <a href="/edit/<%= element%>" class="edit-btn">Edit</a>
     <a href="/delete/<%= element %>" class="delete-btn">Delete</a>
   </div>
 </div>

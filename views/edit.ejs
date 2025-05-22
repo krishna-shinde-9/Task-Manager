@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit - <%= filename %></title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f0f0f;
+      color: #f0f0f0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 30px;
+      background: #1c1c1c;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+    }
+
+    h2 {
+      text-align: center;
+      color: #00f0ff;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 300px;
+      padding: 15px;
+      font-size: 16px;
+      background-color: #101010;
+      color: #ffffff;
+      border: 1px solid #333;
+      border-radius: 8px;
+      resize: vertical;
+      box-shadow: inset 0 0 8px rgba(0, 255, 255, 0.2);
+    }
+
+    input[type="submit"] {
+      padding: 12px;
+      background: #00f0ff;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background: #00d5ff;
+      box-shadow: 0 0 10px #00f0ff;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      background: #444;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .back-link:hover {
+      background: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Editing: <%= filename %></h2>
+
+    <form action="/edit/<%= filename %>" method="post">
+      <textarea name="areadata" required><%= filedata %></textarea>
+      <input type="submit" value="Save Changes" />
+    </form>
+
+    <a href="/home" class="back-link">⬅ Back to Home</a>
+  </div>
+
+</body>
+</html>

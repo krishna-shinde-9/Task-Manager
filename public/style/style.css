@@ -131,3 +131,49 @@ input[type="submit"]:hover {
   background: #ff1c1c;
   box-shadow: 0 0 14px #ff3b3b;
 }
+.task-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.task-actions a {
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.task-actions a:first-child {
+  background: #00f0ff;
+  color: #000;
+  box-shadow: 0 0 8px #00f0ff88;
+}
+
+.task-actions a:first-child:hover {
+  background: #00d5ff;
+  box-shadow: 0 0 14px #00f0ff;
+}
+
+.edit-btn {
+  background: #ffa500;
+  color: #000;
+  box-shadow: 0 0 8px #ffa50088;
+}
+
+.edit-btn:hover {
+  background: #ff8c00;
+  box-shadow: 0 0 14px #ffa500;
+}
+
+.delete-btn {
+  background: #ff3b3b;
+  color: #fff;
+  box-shadow: 0 0 8px #ff3b3b66;
+}
+
+.delete-btn:hover {
+  background: #ff1c1c;
+  box-shadow: 0 0 14px #ff3b3b;
+}

@@ -4,6 +4,7 @@ const app =  express()
 const fs = require('fs')
 const port = 3000
 let path =  require('path')
+const { log } = require('console')
 app.use(express.urlencoded())
 app.use(express.json())
 app.use(express.static(path.join(__dirname,'public')))
@@ -53,6 +54,45 @@ app.get(`/delete/:filename`,(req,res)=>{
 
 }
 )
+
+app.get('/edit/:filename',(req,res)=>{
+        let old_data
+fs.readFile(`./files/${req.params.filename}`,"utf-8",(e,filedata)=>{
+res.render('edit',{filename:req.params.filename,filedata:filedata})
+
+old_data = filedata
+console.log(old_data);
+
+
+})
+
+
+})
+app.post('/edit/:filename',(req,res)=>{
+        let old_data
+fs.readFile(`./files/${req.params.filename}`,"utf-8",(e,filedata)=>{
+
+
+
+res.render('edit',{filename:req.params.filename,filedata:filedata})
+
+old_data = filedata
+let modi = req.body.areadata
+fs.writeFile(`./files/${req.params.filename}`,modi,(e)=> {return e})
+
+
+
+})
+
+
+})
+
+
+
+
+
+
+
 
 
 app.listen(port,()=>{
